@@ -24,9 +24,9 @@
       </div>
       <div id="sidebar">
         <div  id="carTrim"> 
-          <h2>Your 2025 Carnival $42,840</h2>
+          <h2 style="margin: top 40px;">Your 2025 Carnival $42,840</h2>
           <p>Total Amount as Built*</p>
-          <hr>
+          <hr/>
           <h4>Upgrade You Accessories</h4>
          
 <select id="mySelect" style="display: none" ><option>1. 18" Black Chrome 6-Spoke Wheel w/ All-Terrain Tire</option>
@@ -42,6 +42,17 @@
           
          
         </div>
+        <div id="ordersummary">
+          <template id="postTemplate">
+            <h3 id="clonet" style="margin: 0px;">Title</h3>
+            <hr />
+            <div style="padding: 0px 15px; margin-bottom: 50px;">
+              <p id="clonep" >Content</p>
+            </div>
+          </template>
+        </div>
+
+
         <div class="flex-ctr" id="contactinfo" >
           <h4 >Your Contact Information   </h4>
             <p>*Required</p>
@@ -96,7 +107,7 @@
               <div class="flex-row">
                 
                 <input type="submit" value="Submit Request" />
-                <!-- onclick="createItem()" -->
+            
                 <div id="successMessage" style="display: none">
                   Form submitted successfully!
                 </div>
