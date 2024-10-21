@@ -1,6 +1,3 @@
-import { createLessThan } from "typescript";
-import "./styles.css";
-
 const menuLinks = [
   { text: "2025'Carnival", href: "/about" },
   {
