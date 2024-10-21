@@ -40,7 +40,7 @@ mainpic.style.height = "200px";
 mainpic.innerHTML = "";
 const h1 = document.createElement("h1");
 h1.textContent = "";
-
+// body.appendChild(foot).appendChild(mainpic).appendChild(h1);
 
 const sidebar = document.createElement("section");
 sidebar.classList.add("flex");
@@ -62,12 +62,11 @@ sidebar.appendChild(reqQuote);
 ////////////////////////////////tried and works well, but  it not good for my this case.
 
 const orderMenu = document.getElementById("order-menu");
+console.log(orderMenu)
 orderMenu.style.backgroundColor = "var(--top-menu-bg)";
-orderMenu.style.height = "100%";
-orderMenu.style.margin = "20px 100px";
+// orderMenu.style.height = "100%";
+// orderMenu.style.margin = "20px 130px";
 orderMenu.classList.add("flex-ctr");
-
-
 
 menuLinks.forEach((menus) => {
   const topA = document.createElement("a");
@@ -83,19 +82,20 @@ orderMenu.addEventListener("click", (e) => {
   if (e.target.tagName !== "a") {
     e.preventDefault();
   }
-
+  // e.preventDefault();
+  // if (!topMenuLinks.includes(e.target)) return; ///REF
   const previousSelection = orderMenuLinks.find((element) => {
-   
+    //REF CONTAINS !!!!!!!!!
     return element.classList.contains("active");
   });
-
+  // Remove active class from all links
   orderMenuLinks.forEach((link) => {
     link.classList.remove("active");
     if (previousSelection === e.target) {
-  
+      /////REF If current selection is similar to previous selection remove the active class
       e.target.classList.remove("active");
     } else {
-     
+      //  add the active class
       e.target.classList.add("active");
     }
   });
@@ -111,6 +111,8 @@ const passwordCheck = form.elements["passwordCheck"];
 form.addEventListener("Register", validate);
 
 // The big validation function.
+// While this may seem like a lot of functions we
+// need to build, most will be very simple!
 function validate(evt) {
   const nameVal = validateName();
   if (nameVal === false) {
@@ -135,7 +137,9 @@ Password:${passwordVal}`);
 
 const successMessage = document.getElementById("successMessage");
 form.addEventListener("submit", (event) => {
-  event.preventDefault(); 
+  event.preventDefault(); // Prevent default form submission
+  // if (){
+  // ??????????
   form.reset(); // Clear all form fields
   successMessage.style.display = "block"; // Show the success message
   // }
@@ -356,4 +360,4 @@ requote.addEventListener("click", function () {
 `);
 });
 // Close the document stream
-// myWindow.document.close();
+myWindow.document.close();
