@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>KIA order summery page</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav id="mustmenu">logo KIA</nav>
+      <nav id="order-menu"></nav>
+      <!-- <nav id="sub-menu"></nav> -->
+    </header>
+    <main>
+      <div id="mainpic">
+        <div id="myaccessorylist">
+          <p id="demo1"></p>
+          <p id="demo2"></p>
+          <p id="demo3"></p>
+          <p id="demo4"></p>
+        </div>
+        <div id="dragword"><p>drag the model to see different angle</p></div>
+
+      </div>
+      <div id="sidebar">
+        <div  id="carTrim"> 
+          <h2>Your 2025 Carnival<br>$42,840</h2>
+          <p>Total Amount as Built*</p>
+          <h2>Chose Accessories</h2>
+         
+<select id="mySelect" size="4" ><option>1. 18" Black Chrome 6-Spoke Wheel w/ All-Terrain Tire</option>
+  <option>2. Door Step</option><option>3. Catalytic Converter Protection Shield</option><option>4. All Weather Floor Mats</option></select>
+  <div id="addlistbutton">
+    <p><button class="accessory" id="accessory1">Add #1</button></p>
+    <p><button class="accessory" id="accessory2">Add #2</button></p>
+    <p><button class="accessory" id="accessory3">Add #3</button></p>
+    <p><button class="accessory" id="accessory4">Add #4</button></p></div>
+        </div>
+        <div class="flex-ctr" id="reQuote">
+          <button id="requote">Request A Quote</button>
+          
+         
+        </div>
+        <div class="flex-ctr" id="contactinfo" >
+          <h4 >Your Contact Information   </h4>
+            <p>*Required</p>
+        </div>
+        
+        <div class="form-container">         
+        
+          
+            <form id="request">
+              <input
+                name="username"
+                type="text"
+                placeholder="Full name"
+                required
+                pattern="/^(?=.*[a-z]{2})(?!.*\W)(?!.* ).{4,}$/"
+                title="username must contain at least two unique characters and cannot contain any special characters or whitespace"
+              />
+              <br /><br />
+    
+              <input
+                name="email"
+                type="email"
+                placeholder="Email"
+                required
+                pattern="/^(?!.*[example.com])(?!.*[A-Z])$/"
+                title="Email must not be from the domain example.com."
+              />
+              </span
+              ><br /><br />
+    
+              <input
+                name="password"
+                type="text"
+                placeholder="Phone"
+                required
+                pattern="/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?!.*[password]{A-Za-z})(?=.*\W)(?!.* ).{12,}$/"
+                title="Passwords must be at least 12 characters long.
+    Passwords must have at least one uppercase and one lowercase letter.
+    must contain at least one number.
+    must contain at least one special character.
+    cannot contain the word `password` (uppercase, lowercase, or mixed).
+    cannot contain the username."
+              />
+              <br /><br />
+    
+              <input
+                name="passwordCheck"
+                type="text"
+                placeholder="Address"
+                required
+              />
+              <br /><br />
+    
+              <div class="flex-row">
+                
+                <input type="submit" value="Submit Request" />
+                <!-- onclick="createItem()" -->
+                <div id="successMessage" style="display: none">
+                  Form submitted successfully!
+                </div>
+              </div>
+            </form>
+          </div>
+
+      </div>
+    </main>
+<div id="cookies">
+</div>
+   
+  
+<footer>
+  
+</footer>
+    <script src="./index.mjs"></script>
+    
+
+  </body>
+</html>
