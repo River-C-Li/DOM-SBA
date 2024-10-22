@@ -1,7 +1,7 @@
 const menuLinks = [
   { text: "2025'Carnival", href: "/about" },
   {
-    text: "Cabs&Beds",
+    text: "Trim",
     href: "#",
   },
 
@@ -34,17 +34,17 @@ foot.classList.add("flex-ctr");
 
 const mainpic = document.createElement("section");
 mainpic.classList.add("flex");
-mainpic.style.backgroundColor = "#b88e8e";
+mainpic.style.backgroundColor = "var(--main-pic-bg)";
 mainpic.style.width = "60%";
 mainpic.style.height = "200px";
 mainpic.innerHTML = "";
 const h1 = document.createElement("h1");
-h1.textContent = "";
-// body.appendChild(foot).appendChild(mainpic).appendChild(h1);
+h1.textContent = "js creates footer here";
+body.appendChild(foot).appendChild(mainpic).appendChild(h1);
 
 const sidebar = document.createElement("section");
 sidebar.classList.add("flex");
-sidebar.style.backgroundColor = "#0000";
+sidebar.style.backgroundColor = "#var(--main-pic-bg)";
 sidebar.style.width = "40%";
 sidebar.style.height = "200px";
 sidebar.innerHTML = "";
@@ -52,12 +52,12 @@ body.appendChild(foot).appendChild(sidebar);
 const carTrim = document.createElement("div");
 carTrim.classList.add("flex");
 carTrim.style.height = "100px";
-carTrim.innerHTML = "";
+carTrim.innerHTML = "js creates footer here";
 sidebar.appendChild(carTrim);
 const reqQuote = document.createElement("div");
 reqQuote.classList.add("flex");
 reqQuote.style.height = "80px";
-reqQuote.innerHTML = "";
+reqQuote.innerHTML = "but I dont want to use for the case.";
 sidebar.appendChild(reqQuote);
 ////////////////////////////////tried and works well, but  it not good for my this case.
 
@@ -364,35 +364,63 @@ myWindow.document.close();
 
 
 
-// clone:
-const ordersummary = document.getElementById("ordersummary");
 
-// A builder function to make the
-// created DOM structures consistent.
-function createPost(title, content) {
-  // Using an HTML template clone
-  const postTemplate = document.getElementById("postTemplate");
-  const clone = postTemplate.content.cloneNode(true);
+// clone tried didnt works
 
-  // We can use selectors to find different nodes
-  // within the template clone itself.
-  const heading = clone.getElementById("clonet");
-  const body = clone.getElementById("clonep");
+if ("content" in document.createElement("template")) {
+  // Instantiate the table with the existing HTML tbody
+  // and the row with the template
+  const tbody = document.querySelector("tbody");
+  const template = document.querySelector("#productrow");
 
-  heading.textContent = title;
-  body.innerHTML = content;
+  // Clone the new row and insert it into the table
+  const clone = template.content.cloneNode(true);
+  let td = clone.querySelectorAll("td");
+  td[0].textContent = "Trim";
+  td[1].textContent = "EXL";
 
-  return clone;
+  tbody.appendChild(clone);
+
+  // Clone the new row and insert it into the table
+  const clone2 = template.content.cloneNode(true);
+  td = clone2.querySelectorAll("td");
+  td[0].textContent = "Color";
+  td[1].textContent = "Green";
+
+  tbody.appendChild(clone2);
+} else {
+
 }
 
-// Now, we can use the function to build consistent
-// post elements using custom data. We'll be pulling
-// from the JSON Placeholder API for convenience.
-(async () => {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
-  const posts = await res.json();
+// // clone tried didnt works
+// const ordersummary = document.getElementById("ordersummary");
 
-  posts.forEach((post) => {
-    ordersummary.appendChild(createPost(post.title, post.body));
-  });
-})();
+// // A builder function to make the
+// // created DOM structures consistent.
+// function createPost(title, content) {
+//   // Using an HTML template clone
+//   const postTemplate = document.getElementById("postTemplate");
+//   const clone = postTemplate.content.cloneNode(true);
+
+//   // We can use selectors to find different nodes
+//   // within the template clone itself.
+//   const heading = clone.getElementById("clonet");
+//   const body = clone.getElementById("clonep");
+
+//   heading.textContent = title;
+//   body.innerHTML = content;
+
+//   return clone;
+// }
+
+// // Now, we can use the function to build consistent
+// // post elements using custom data. We'll be pulling
+// // from the JSON Placeholder API for convenience.
+// (async () => {
+//   const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+//   const posts = await res.json();
+
+//   posts.forEach((post) => {
+//     ordersummary.appendChild(createPost(post.title, post.body));
+//   });
+// })();
