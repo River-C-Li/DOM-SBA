@@ -1,18 +1,134 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>ALAB DOM Manipulation</title>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
 
-  <body>
-    ALAB DOM Manipulation
-    <header>
-      <nav id="top-menu"></nav>
-    </header>
-    <main></main>
+<head>
+  <title>KIA order summary page</title>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
 
-    <script src="./index.js"></script>
-  </body>
+<body>
+  <header>
+    <nav id="mustmenu">HERE IS  KIA LOGO AND TOP MENU. THIS IS A CAR ORDER SUMMARY PAGE.</nav>
+  </header>
+  <nav id="order-menu"></nav>
+  <main>
+    <div id="mainpic">
+      <div id="myaccessorylist">
+        <p class="accessorylist" id="demo1"></p>
+        <p class="accessorylist" id="demo2"></p>
+        <p class="accessorylist" id="demo3"></p>
+        <p class="accessorylist" id="demo4"></p>
+      </div>
+      <div id="dragword">
+        <p>drag the model to see different angle</p>
+      </div>
+
+    </div>
+    <div id="sidebar">
+      <div id="carTrim">
+        <h2 style="margin: top 40px;">Your 2025 Carnival $42,840</h2>
+        <p>Total Amount as Built*</p>
+        <hr />
+        <h4>Upgrade You Accessories</h4>
+
+        <select id="mySelect" style="display: none">
+          <option>1. 18" Black Chrome 6-Spoke Wheel w/ All-Terrain Tire</option>
+          <option>2. Door Step</option>
+          <option>3. Catalytic Converter Protection Shield</option>
+          <option>4. All Weather Floor Mats</option>
+        </select>
+        <div id="addlistbutton">
+          <p><button class="accessory" id="accessory1">Add | 18" Black Chrome 6-Spoke Wheel  >></button></p>
+          <p><button class="accessory" id="accessory2">Add | Door Step   >></button></p>
+          <p><button class="accessory" id="accessory3">Add | Catalytic Converter Protection Shield   >></button></p>
+          <p><button class="accessory" id="accessory4">Add | All Weather Floor Mats  >></button></p>
+        </div>
+        <br>
+        <!-- <div id="ordersummary">
+          <template id="postTemplate">
+            <h3 id="clonet" style="margin: 0px;">Title</h3>
+            <hr />
+            <div style="padding: 0px 15px; margin-bottom: 50px;">
+              <p id="clonep">Content</p>
+            </div>
+          </template>
+        </div> -->
+        <table id="producttable">
+      <thead>
+        <tr>
+          <td>Customizable Parts----|</td>
+          <td>|----List of Your Favirate</td>
+        </tr>
+      </thead>
+      <tbody>
+        (clone table row, doesn't work)
+      </tbody>
+    </table>
+    
+    <template id="productrow">
+      <tr>
+        <td class="record"></td>
+        <td></td>
+      </tr>
+    </template>
+    
+      </div>
+      <div class="flex-ctr" id="reQuote">
+        <button id="requote">Request A Quote</button>
+      </div>
+
+      <div class="flex-ctr" id="contactinfo">
+        <h4>Your Contact Information </h4>
+        <p>*Required</p>
+      </div>
+
+      <div class="form-container">
+        <form id="request">
+          <input name="username" type="text" placeholder="Full name" required
+            pattern="/^(?=.*[a-z]{2})(?!.*\W)(?!.* ).{4,}$/"
+            title="username must contain at least two unique characters and cannot contain any special characters or whitespace" />
+          <br /><br />
+
+          <input name="email" type="email" placeholder="Email" required pattern="/^(?!.*[example.com])(?!.*[A-Z])$/"
+            title="Email must not be from the domain example.com." />
+          </span><br /><br />
+
+          <input name="password" type="text" placeholder="Phone" required
+            pattern="/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?!.*[password]{A-Za-z})(?=.*\W)(?!.* ).{12,}$/" title="Passwords must be at least 12 characters long.
+    Passwords must have at least one uppercase and one lowercase letter.
+    must contain at least one number.
+    must contain at least one special character.
+    cannot contain the word `password` (uppercase, lowercase, or mixed).
+    cannot contain the username." />
+          <br /><br />
+
+          <input name="passwordCheck" type="text" placeholder="Address" required />
+          <br /><br />
+
+          <div class="flex-row">
+
+            <input type="submit" value="Submit Request" />
+
+            <div id="successMessage" style="display: none">
+              Form submitted successfully!
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </main>
+  <div id="cookies">
+  </div>
+
+
+  <footer>
+
+  </footer>
+  <script src="./index.js"></script>
+
+
+</body>
+
 </html>
